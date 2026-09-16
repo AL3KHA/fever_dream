@@ -13,12 +13,9 @@ uv1_triplanar = true
 
 [node name="mountains" unique_id=627196473 instance=ExtResource("1_ehodv")]
 
-[node name="mountain" parent="." index="0" unique_id=439307013]
+[node name="mountain" parent="." index="0" unique_id=2011353211]
 surface_material_override/0 = SubResource("StandardMaterial3D_3vyb7")
 
-[node name="StaticBody3D" parent="mountain" index="0" unique_id=543627618 groups=["snow"]]
+[node name="StaticBody3D" parent="mountain" index="0" unique_id=177882157 groups=["snow"]]
 collision_layer = 3
 collision_mask = 3
-
-[node name="mountain_001" parent="." index="1" unique_id=168141032]
-surface_material_override/0 = SubResource("StandardMaterial3D_3vyb7")
