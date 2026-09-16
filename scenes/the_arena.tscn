@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bayj1ddjtoj00"]
+
+[ext_resource type="PackedScene" uid="uid://by8yh83hvb82r" path="res://3d_models/arena/fever_dream_arena.tscn" id="1_4ssll"]
+
+[sub_resource type="Environment" id="Environment_riqys"]
+background_energy_multiplier = 0.0
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_emission = Color(0, 0, 0.07058824, 1)
+adjustment_enabled = true
+adjustment_saturation = 0.67
+
+[node name="the_arena" type="Node" unique_id=778414970]
+
+[node name="fever dream arena" parent="." unique_id=1057788048 instance=ExtResource("1_4ssll")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=414506920]
+environment = SubResource("Environment_riqys")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1677059993]
+light_energy = 0.0
+
+[node name="Node3D" type="Node3D" parent="." unique_id=346221840]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D" unique_id=1653568891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 139.4, 65)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Node3D" unique_id=376655497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 139.4, -65)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Node3D" unique_id=1410781374]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 65, 139.4, -2.8412403e-06)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Node3D" unique_id=2068645012]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -65, 139.4, 2.8412403e-06)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Node3D" unique_id=1771621979]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 45.96194, 139.4, 45.96194)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Node3D" unique_id=113669032]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -45.96194, 139.4, -45.96194)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Node3D" unique_id=1600042820]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 45.96194, 139.4, -45.96194)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Node3D" unique_id=1051823916]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -45.96194, 139.4, 45.96194)
+light_color = Color(0.9529412, 1, 1, 1)
+distance_fade_begin = 0.0
+omni_range = 150.0

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cvkr22geg15vw"]
+
+[ext_resource type="Script" uid="uid://chmxn2uc1i66o" path="res://scripts/tester.gd" id="1_qt16s"]
+[ext_resource type="Texture2D" uid="uid://c25wek42ddybs" path="res://addons/godot-prototype-texture/PNG/checker_512x512/checker_black_512x512.png" id="2_yyub0"]
+[ext_resource type="PackedScene" uid="uid://chspoo14b2x8a" path="res://scenes/player.tscn" id="3_m6jnb"]
+[ext_resource type="Texture2D" uid="uid://clcpk17vyrhrj" path="res://textures/dirty white plastic/dirtywhiteplasyic_Normal.jpg" id="3_yyub0"]
+[ext_resource type="Texture2D" uid="uid://8nnwnl8ouhqg" path="res://textures/dirty white plastic/dirtywhiteplasyic_Roughness.jpg" id="4_ag3va"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bqsi0xh2v2kh0" path="res://occlusion culling/tester.occ" id="6_ag3va"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt16s"]
+albedo_texture = ExtResource("2_yyub0")
+roughness_texture = ExtResource("4_ag3va")
+normal_enabled = true
+normal_scale = 8.0
+normal_texture = ExtResource("3_yyub0")
+refraction_scale = 0.0
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+material = SubResource("StandardMaterial3D_qt16s")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_57qmd"]
+
+[sub_resource type="Sky" id="Sky_ag3va"]
+sky_material = SubResource("ProceduralSkyMaterial_57qmd")
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+background_mode = 2
+sky = SubResource("Sky_ag3va")
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3vyb7"]
+auto_exposure_enabled = true
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.3
+dof_blur_near_transition = -1.0
+
+[sub_resource type="Compositor" id="Compositor_iya86"]
+
+[node name="Node" type="Node" unique_id=924196054]
+script = ExtResource("1_qt16s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=576771895 groups=["metal"]]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
+collision_layer = 255
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1781604223]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=844804276]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=533175377]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 11.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=292192230]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=1160833715]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1282430946]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.7, 0)
+collision_layer = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=78236926]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=617513480]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1882889360]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, -4.7, 4.3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" unique_id=299151499]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4" unique_id=985954991]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=1385433379]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, -11.6, 6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5" unique_id=1662473713]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5" unique_id=659633912]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=817070174]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, -15.6, 7.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6" unique_id=1452560416]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D6" unique_id=974280829]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="." unique_id=1196390824]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, -12.6, 9.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7" unique_id=403791920]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7" unique_id=350782501]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="." unique_id=1975354767]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 3, -10.6, 11, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8" unique_id=69813776]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D8" unique_id=950968421]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="player" parent="." unique_id=1698264314 instance=ExtResource("3_m6jnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.071323395, 0.0020372272, 4.996333)
+WALKING_SPEED = 1.7
+SPRINTING_SPEED = 6.0
+CROUCHING_SPEED = 1.3
+strafe_acceleration = 12
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=509561098]
+environment = SubResource("Environment_g4v7s")
+camera_attributes = SubResource("CameraAttributesPractical_3vyb7")
+compositor = SubResource("Compositor_iya86")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060647588]
+transform = Transform3D(0.27086598, 0.18301274, -0.9450597, 0.95387876, -0.18301271, 0.23795292, -0.12940952, -0.9659258, -0.2241439, 0, 0, 0)
+shadow_enabled = true
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1241219333]
+occluder = ExtResource("6_ag3va")

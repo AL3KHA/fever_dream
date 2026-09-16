@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn86t6pleq2vp"]
+
+[ext_resource type="Texture2D" uid="uid://b47faqc86bnr" path="res://textures/MarbleWhite_01/MarbleWhite_01_basecolor.jpg" id="1_src0g"]
+[ext_resource type="Texture2D" uid="uid://byca7veowcjj" path="res://textures/MarbleWhite_01/MarbleWhite_01_normalogl.jpg" id="2_2qrwh"]
+[ext_resource type="Texture2D" uid="uid://btnk8tqvncmye" path="res://textures/MarbleWhite_01/MarbleWhite_01_roughness.jpg" id="3_4hhsf"]
+
+[resource]
+albedo_texture = ExtResource("1_src0g")
+roughness_texture = ExtResource("3_4hhsf")
+normal_enabled = true
+normal_texture = ExtResource("2_2qrwh")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

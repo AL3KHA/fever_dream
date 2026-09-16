@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dodrfm48bb34s"]
+
+[ext_resource type="Texture2D" uid="uid://gxdfp6m406e1" path="res://textures/tarazo tile/terazo tile 7_BaseColor.jpg" id="1_h0r8m"]
+[ext_resource type="Texture2D" uid="uid://mj1qi3dqiy80" path="res://textures/tarazo tile/terazo tile 7_Displacement.jpg" id="2_uda86"]
+[ext_resource type="Texture2D" uid="uid://b2d8klo57gja2" path="res://textures/tarazo tile/terazo tile 7_Normal.jpg" id="3_6pkxh"]
+[ext_resource type="Texture2D" uid="uid://cfr3lq8jrpihc" path="res://textures/tarazo tile/terazo tile 7_Roughness.jpg" id="4_851jb"]
+
+[resource]
+albedo_texture = ExtResource("1_h0r8m")
+roughness_texture = ExtResource("4_851jb")
+normal_enabled = true
+normal_texture = ExtResource("3_6pkxh")
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("2_uda86")
+uv1_triplanar = true
+uv1_world_triplanar = true

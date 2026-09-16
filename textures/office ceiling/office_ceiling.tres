@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbe67suvuhdy8"]
+
+[ext_resource type="Texture2D" uid="uid://xr1d4dgkmks6" path="res://textures/office ceiling/OfficeCeiling001_2K_Color.jpg" id="1_4g5sj"]
+[ext_resource type="Texture2D" uid="uid://chdt6hnmu03g6" path="res://textures/office ceiling/OfficeCeiling001_2K_Metalness.jpg" id="2_a6ej5"]
+[ext_resource type="Texture2D" uid="uid://dbh4r5sqasl7b" path="res://textures/office ceiling/OfficeCeiling001_2K_Normal.jpg" id="3_2fcma"]
+[ext_resource type="Texture2D" uid="uid://w2g1aw3wgip8" path="res://textures/office ceiling/OfficeCeiling001_2K_Roughness.jpg" id="4_bolyr"]
+
+[resource]
+albedo_texture = ExtResource("1_4g5sj")
+metallic = 1.0
+metallic_texture = ExtResource("2_a6ej5")
+roughness_texture = ExtResource("4_bolyr")
+normal_enabled = true
+normal_texture = ExtResource("3_2fcma")
+uv1_scale = Vector3(27, 27, 27)
+uv1_offset = Vector3(0.065, 0.25, 0)
+uv1_world_triplanar = true

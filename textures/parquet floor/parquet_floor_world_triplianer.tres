@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://btlnddlykw3c3"]
+
+[ext_resource type="Texture2D" uid="uid://r66t65oalwys" path="res://textures/parquet floor/Parquet_Trials_basecolor.jpg" id="1_jw522"]
+[ext_resource type="Texture2D" uid="uid://drfsftq7nff07" path="res://textures/parquet floor/Parquet_Trials_normal.jpg" id="2_vrppc"]
+[ext_resource type="Texture2D" uid="uid://dliq6m664cqpt" path="res://textures/parquet floor/Parquet_Trials_roughness.jpg" id="3_mf60j"]
+
+[resource]
+albedo_texture = ExtResource("1_jw522")
+roughness_texture = ExtResource("3_mf60j")
+normal_enabled = true
+normal_texture = ExtResource("2_vrppc")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

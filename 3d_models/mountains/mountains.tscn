@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bwll1u66keht"]
+
+[ext_resource type="PackedScene" uid="uid://dsvwwa6a05t13" path="res://3d_models/mountains/mountains.blend" id="1_ehodv"]
+[ext_resource type="Texture2D" uid="uid://bcgud4y8aiypj" path="res://textures/asphalt/asphalt_01_normal.jpg" id="2_aucqg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vyb7"]
+roughness = 0.5
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("2_aucqg")
+uv1_scale = Vector3(40, 40, 40)
+uv1_triplanar = true
+
+[node name="mountains" unique_id=627196473 instance=ExtResource("1_ehodv")]
+
+[node name="mountain" parent="." index="0" unique_id=439307013]
+surface_material_override/0 = SubResource("StandardMaterial3D_3vyb7")
+
+[node name="StaticBody3D" parent="mountain" index="0" unique_id=543627618 groups=["snow"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="mountain_001" parent="." index="1" unique_id=168141032]
+surface_material_override/0 = SubResource("StandardMaterial3D_3vyb7")
