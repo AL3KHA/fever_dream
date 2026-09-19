@@ -89,5 +89,7 @@ camera_change={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/directional_shadow/size=16384
+reflections/reflection_atlas/reflection_size=1024
 textures/default_filters/anisotropic_filtering_level=0
 occlusion_culling/use_occlusion_culling=true

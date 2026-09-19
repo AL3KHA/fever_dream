@@ -30,10 +30,13 @@ sky_material = SubResource("ProceduralSkyMaterial_57qmd")
 [sub_resource type="Environment" id="Environment_g4v7s"]
 background_mode = 2
 sky = SubResource("Sky_ag3va")
+ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3vyb7"]
 auto_exposure_enabled = true
@@ -152,6 +155,7 @@ compositor = SubResource("Compositor_iya86")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060647588]
 transform = Transform3D(0.27086598, 0.18301274, -0.9450597, 0.95387876, -0.18301271, 0.23795292, -0.12940952, -0.9659258, -0.2241439, 0, 0, 0)
 shadow_enabled = true
+shadow_bias = 0.0
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1241219333]
 occluder = ExtResource("6_ag3va")
