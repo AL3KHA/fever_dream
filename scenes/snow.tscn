@@ -36,6 +36,7 @@ dof_blur_near_transition = -1.0
 
 [node name="Node3D" type="Node3D" unique_id=128997703]
 script = ExtResource("1_iyx0m")
+DOF_speed = 20.0
 
 [node name="player" parent="." unique_id=1698264314 instance=ExtResource("2_iyx0m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.071323395, 384.10202, -255.00366)
