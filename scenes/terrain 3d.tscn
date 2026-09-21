@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bd75i00tkkp8q"]
+
+[ext_resource type="Script" uid="uid://d1gnv27hu565j" path="res://scripts/terrain_3d.gd" id="1_wt667"]
+[ext_resource type="PackedScene" uid="uid://chspoo14b2x8a" path="res://scenes/player.tscn" id="1_yp8xx"]
+[ext_resource type="Texture2D" uid="uid://c40q2jlwu5tex" path="res://textures/snow_ground/SNOW TRY_BaseColor.jpg" id="2_sy6t1"]
+[ext_resource type="Texture2D" uid="uid://rtrqibhmwme6" path="res://textures/snow_ground/SNOW TRY_Normal.jpg" id="3_u3k5j"]
+[ext_resource type="PackedScene" uid="uid://u2fl4f47yh3t" path="res://3d_models/the_base/the_base.tscn" id="5_u3k5j"]
+
+[sub_resource type="Gradient" id="Gradient_muwoa"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yp8xx"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wt667"]
+noise = SubResource("FastNoiseLite_yp8xx")
+color_ramp = SubResource("Gradient_muwoa")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_cunee"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_wt667"),
+&"projection_threshold": null
+}
+world_background = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_weddv"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_fcesb"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_weddv")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_8twbo"]
+name = "terrain 3d"
+albedo_texture = ExtResource("2_sy6t1")
+normal_texture = ExtResource("3_u3k5j")
+roughness = -1.0
+uv_scale = 2.0
+detiling_rotation = 0.795
+detiling_shift = 0.347
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_wr5xy"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_fcesb")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_8twbo")])
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cunee"]
+
+[sub_resource type="Sky" id="Sky_riqys"]
+sky_material = SubResource("ProceduralSkyMaterial_cunee")
+
+[sub_resource type="Environment" id="Environment_sy6t1"]
+background_mode = 2
+sky = SubResource("Sky_riqys")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u3k5j"]
+auto_exposure_enabled = true
+dof_blur_near_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=2128977695]
+script = ExtResource("1_wt667")
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1599786916]
+data_directory = "res://terrain data directory"
+material = SubResource("Terrain3DMaterial_cunee")
+assets = SubResource("Terrain3DAssets_wr5xy")
+collision_layer = 3
+collision_mask = 3
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." unique_id=1698264314 instance=ExtResource("1_yp8xx")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 11.2, 0)
+WALKING_SPEED = 1.7
+SPRINTING_SPEED = 6.0
+CROUCHING_SPEED = 1.3
+strafe_acceleration = 12
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1064181181]
+transform = Transform3D(0.1866993, 0.19826694, -0.96220255, 0.9738566, -0.1663657, 0.15468004, -0.12940954, -0.9659258, -0.2241439, 0, 0, 0)
+light_color = Color(1, 0.78431374, 0.6392157, 1)
+shadow_enabled = true
+shadow_bias = 0.05
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1044655113]
+environment = SubResource("Environment_sy6t1")
+camera_attributes = SubResource("CameraAttributesPractical_u3k5j")
+
+[node name="the_base" parent="." unique_id=624206499 instance=ExtResource("5_u3k5j")]
+transform = Transform3D(-1.857734e-07, 0, -4.25, 0, 4.25, 0, 4.25, 0, -1.857734e-07, -175.31894, 117.35418, 72.335335)

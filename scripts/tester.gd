@@ -3,6 +3,9 @@ extends Node
 @onready var player = $player
 @onready var advanced_DOF = $player/Camera3D/SpringArm3D
 @onready var world_enviroment = $WorldEnvironment
+@onready var fpp = $player/Camera3D
+@onready var cctv: Camera3D = $SubViewportContainer/SubViewport/Camera3D
+
 
 var far_distance_smoothed: float
 var near_distance_smoothed: float
@@ -31,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	print(dof_distance, " ", far_distance)
 	far_distance_smoothed = lerp(far_distance_smoothed, far_distance, delta * DOF_speed)
 	near_distance_smoothed = lerp(near_distance_smoothed, near_distance, delta * DOF_speed)
-	world_enviroment.camera_attributes.dof_blur_far_distance = far_distance_smoothed
+	world_enviroment.camera_attributes.dof_blur_far_distance = far_distance_smoothed * 2
 	world_enviroment.camera_attributes.dof_blur_far_transition = far_distance_smoothed * 2
 	world_enviroment.camera_attributes.dof_blur_near_distance = near_distance_smoothed / 2
 	world_enviroment.camera_attributes.dof_blur_near_transition = near_distance_smoothed / 2
